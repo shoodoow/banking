@@ -32,7 +32,7 @@ const BankCard = ({
                 </div>
                 <div className='bank-card_icon'>
                     <Image src='/icons/visa.svg' width={45} height={32} alt='Visa' />
-                    <Image src='/icons/mastercard.svg' width={45} height={40} alt='mastercard' className=' ml-' />
+                    <Image src='/icons/mastercard.svg' width={45} height={40} alt='mastercard' className=' ml-5' />
 
                 </div>
 
