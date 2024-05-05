@@ -13,27 +13,26 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import Footer from "./Footer"
 
 
 const MobileNav = ({ user }: MobileNavProps) => {
     const pathname = usePathname()
     return (
-        <section className="w-full max-w-p[264px]">
+        <section className="w-full max-w-[264px]">
 
             <Sheet>
                 <SheetTrigger>
                     <Image src='/icons/hamburger.svg' alt='menu icon' width={30} height={30} className='cursor-pointer' />
                 </SheetTrigger>
                 <SheetContent side={'left'} className="border-none bg-white">
-                    <SheetClose asChild >
-                        <Link href='/' className='flex mb-12 cursor-pointer items-center'>
-                            <Image src='/icons/logo.svg' alt='logo' width={34} height={34} />
-                            <h1 className='text-26 font-ibm-plex-serif font-bold text-black-2 px-3 '>Horizon</h1>
-                        </Link>
+                    <Link href='/' className='flex mb-12 cursor-pointer items-center'>
+                        <Image src='/icons/logo.svg' alt='logo' width={34} height={34} />
+                        <h1 className='text-26 font-ibm-plex-serif font-bold text-black-2 px-3 '>Horizon</h1>
+                    </Link>
 
-                    </SheetClose>
 
-                    <div className="">
+                    <div className="flex h-[calc(100vh-120px)] flex-col justify-between overflow-y-auto">
                         <SheetClose asChild >
                             <nav className='flex h-full flex-col gap-6 text-white '>
                                 {sidebarLinks.map((link, index) => {
@@ -61,10 +60,13 @@ const MobileNav = ({ user }: MobileNavProps) => {
                                     )
                                 }
                                 )}
-                                USER
+
                             </nav>
                         </SheetClose>
+                        <Footer user={user} type="mobile" />
+
                     </div>
+
                 </SheetContent>
             </Sheet>
         </section>

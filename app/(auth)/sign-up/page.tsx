@@ -1,8 +1,15 @@
+import AuthFrom from '@/components/AuthFrom'
+import { getLoggedInUser } from '@/lib/actions/user.actions';
 import React from 'react'
 
-const SignUp = () => {
+const SignUp = async () => {
+  const loggedInUser = await getLoggedInUser();
+  console.log(loggedInUser)
+
   return (
-    <div>SignUp</div>
+    <section className='flex-center size-full max-sm-px-6'>
+      <AuthFrom type={'sign-up'} />
+    </section>
   )
 }
 
