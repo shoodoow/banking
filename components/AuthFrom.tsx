@@ -51,11 +51,11 @@ const AuthFrom = ({ type }: { type: string }) => {
 
                 })
                 router.push('/')
+
             }
             if (type === 'sign-up') {
                 const response = await signUp(values)
                 setUser(response)
-                router.push('/')
 
             }
 
